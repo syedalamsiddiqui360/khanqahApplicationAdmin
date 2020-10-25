@@ -1,26 +1,82 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import FileUpload from "./FileUpload";
+import Download from "./download";
+import Audio from "./components/audio";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div className="container mt-4">
+    {/* <h4 className="display-4 text-center mb-4">
+      <i className="fab fa-react" /> React File Upload
+    </h4>
+    <FileUpload />
+  <div>
+    <Download/>
+  </div> */}
+
+<Audio/>
+  </div>
+);
 
 export default App;
+
+
+
+
+
+// import React, { useRef, useState } from 'react';
+// import Form from './form.js';
+// import axios from 'axios';
+
+
+// function App() {
+
+//   const inputRef = useRef(null);
+//  const [file , setFile] = useState(null)
+
+//   const c = () => {
+//     let formData = new FormData();
+//     formData.append('file', file);
+//     console.log(file)
+//     console.log(formData);
+
+//     // You should have a server side REST API 
+//     axios.post('http://localhost:9000/bayan/post',
+//       formData
+//       , {
+//       headers: {
+//         'Content-Type': 'multipart/form-data'
+//       }
+//     }
+//     ).then((res) => {
+//       console.log(res);
+//     })
+//       .catch((err) => {
+//         console.log('FAILURE!!' + err);
+//       });
+//   }
+
+//   const selectFile = (e) => {
+//     console.log(e.target.files)
+//     setFile(e.target.files)
+//     //  this.selectedFiles = this.$refs.file.files;
+//   }
+
+
+
+//   return (
+//     <div >
+//       <form  action="#" enctype="multipart/form-data">
+//         {/* <input type="file" name="file" /> */}
+//       <input type="file" onChange={(e) => selectFile(e)} />
+//       <button onClick={c}>upload</button>
+        
+//       </form>
+//       {/* <input type="file" id="files" ref={inputRef} onChange={selectFile}/> */}
+//       <input type="file" onChange={(e) => selectFile(e)} />
+//       <button onClick={c}>click</button>
+//     </div>
+//   );
+// }
+
+// export default App;
