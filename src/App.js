@@ -2,19 +2,22 @@ import React from "react";
 import FileUpload from "./FileUpload";
 import Download from "./download";
 import Audio from "./components/audio";
+import Pdf from "./components/pdf";
+import Images from "./components/images";
 import "./App.css";
 
 const App = () => (
   <div className="container mt-4">
-    {/* <h4 className="display-4 text-center mb-4">
-      <i className="fab fa-react" /> React File Upload
+    <h4 className="urdu-font text-center mb-4">
+      <i className="fab fa-react" />  نماز  پڑھے  قبل اس کے آپکی نماز پڑھی جائے
     </h4>
-    <FileUpload />
+    {/* <FileUpload /> */}
   <div>
-    <Download/>
-  </div> */}
-
-<Audio/>
+    {/* <Download/> */}
+  </div>
+{/* <Pdf/> */}
+<Images/>
+{/* <Audio/> */}
   </div>
 );
 

@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function Audio() {
 
-    const [file, setFile] = useState(null)
+    const [file, setFile] = useState([])
     const [name, setName] = useState()
     const [title, setTitle] = useState()
     const [description, setDescription] = useState()
@@ -79,20 +79,16 @@ function Audio() {
 
     const submit = () => {
         let formData = new FormData();
-        console.log(islamiDate)
+        console.log(file)
 
-        formData.append('file', file);
-        formData.append('name', name);
+        for(let i=0;i<file.length;i++){
+            formData.append('file', file[i]);
+        }
+
+        formData.append('slider_id', name);
         formData.append('title', title);
-        formData.append('date', date);
-        formData.append('category', category);
-        formData.append('type', type );
-        formData.append('person', person );
-        formData.append('place', place);
-        formData.append('description', description);
-        formData.append('islamiDate', islamiDate);
         // console.log(formData);
-        axios.post('http://localhost:9000/audio/post', formData, {
+        axios.post('http://localhost:9000/images/post', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -105,7 +101,7 @@ function Audio() {
     }
 
     const handleFile = (e) => {
-        setFile(e.target.files[0])
+        setFile(e.target.files)
         //  this.selectedFiles = this.$refs.file.files;
     }
 
@@ -224,7 +220,7 @@ function Audio() {
 
                 {/* <input type="submit" value="Submit" /> */}
             </form>
-            <input type="file" onChange={(e) => handleFile(e)} />
+            <input type="file" onChange={(e) => handleFile(e)} multiple/>
             <button onClick={submit}>click</button>
         </div>
     );
