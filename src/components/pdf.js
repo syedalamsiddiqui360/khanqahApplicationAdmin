@@ -5,9 +5,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-function Audio() {
+function Pdf() {
 
-    const [file, setFile] = useState(null)
+    const [imageFile, setImageFile] = useState(null)
+    const [pdfFile, setPdfFile] = useState(null)
     const [name, setName] = useState()
     const [title, setTitle] = useState()
     const [description, setDescription] = useState()
@@ -79,20 +80,21 @@ function Audio() {
 
     const submit = () => {
         let formData = new FormData();
-        console.log(islamiDate)
+        console.log(imageFile)
+        console.log(pdfFile)
 
-        formData.append('file', file);
+        formData.append('imageFile', pdfFile);
+        formData.append('pdfFile', imageFile);
         formData.append('name', name);
         formData.append('title', title);
-        formData.append('date', date);
-        formData.append('category', category);
+        formData.append('category', place);
         formData.append('type', type );
         formData.append('person', person );
         formData.append('place', place);
         formData.append('description', description);
         formData.append('islamiDate', islamiDate);
         // console.log(formData);
-        axios.post('http://localhost:9000/audio/post', formData, {
+        axios.post('http://localhost:9000/Pdf/post', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -104,8 +106,13 @@ function Audio() {
         });
     }
 
-    const handleFile = (e) => {
-        setFile(e.target.files[0])
+    const handlePdfFile = (e) => {
+        setPdfFile(e.target.files[0])
+        //  this.selectedFiles = this.$refs.file.files;
+    }
+
+    const handleImageFile = (e) => {
+        setImageFile(e.target.files[0])
         //  this.selectedFiles = this.$refs.file.files;
     }
 
@@ -154,6 +161,7 @@ function Audio() {
     return (
         <div >
             <form >
+            <input type="file" onChange={(e) => handleImageFile(e)} />
                 <label>
                     Name:
           <input type="text" value={name} onChange={(e) => handleName(e)} />
@@ -169,10 +177,6 @@ function Audio() {
           <input type="text" name="place" value={place} onChange={(e) => handlePlace(e)} />
                 </label>
 
-                <label>
-                    date:
-                    <DatePicker selected={date}  onChange={date => handleDate(date)} />
-                </label>
                 
 
                 <label>
@@ -224,10 +228,10 @@ function Audio() {
 
                 {/* <input type="submit" value="Submit" /> */}
             </form>
-            <input type="file" onChange={(e) => handleFile(e)} />
+            <input type="file" onChange={(e) => handlePdfFile(e)} />
             <button onClick={submit}>click</button>
         </div>
     );
 }
 
-export default Audio;
+export default Pdf;

@@ -6,9 +6,9 @@ const Download = () => {
     const click = (e) => {
         console.log("click")
         const body = {
-            fileName: "pp.jpeg"
+            fileName: "2020-11-8 0.8236919462615153 Mujh-ko-jeene-ka-MR.mp3"
         };
-        axios.post("http://localhost:9000/bayan/post", body, { responseType: 'blob' })
+        axios.post("http://localhost:9000/audio/download", body, { responseType: 'blob' })
             .then((response) => {
                 let data = response.data
                 console.log(data.type)
@@ -28,6 +28,9 @@ const Download = () => {
 
     return (
         <div className="container mt-4">
+            <div>
+            <audio src="http://localhost:9000/audio/get/2020-11-8 0.916708964583197 Ashar, Zamanat magfirat ki doston aqsh-e-nadamat h.mp3" preload="auto" controls></audio>
+            </div>
             <h4 className="display-4 text-center mb-4">
                 <i className="fab fa-react" /> React File download
     </h4>
