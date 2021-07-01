@@ -4,13 +4,20 @@ import Download from "./download";
 import Audio from "./components/audio";
 import Pdf from "./components/pdf";
 import Images from "./components/images";
+import Person from "./components/person/person";
+import PersonForm from "./components/person/personForm";
+import PersonList from "./components/person/personList";
+import Type from "./components/type/type";
+import TypeList from "./components/type/typeList";
+import Category from "./components/category/category";
+import CategoryForm from "./components/category/categoryForm";
+import CategoryList from "./components/category/categoryList";
+import Modal from "./components/shared/modal";
 import "./App.css";
 
 const App = () => (
   <div className="container mt-4">
-    <h4 className="urdu-font text-center mb-4">
-      <i className="fab fa-react" />  نماز  پڑھے  قبل اس کے آپکی نماز پڑھی جائے
-    </h4>
+    {/* <Modal /> */}
     {/* <FileUpload /> */}
   <div>
     {/* <Download/> */}
@@ -18,6 +25,14 @@ const App = () => (
 {/* <Pdf/> */}
 <Images/>
 {/* <Audio/> */}
+ {/* <Category/> */}
+{/* <CategoryForm/> */}
+{/* <CategoryList/> */}
+{/* <Type/> */}
+
+ {/* <Person/> */}
+{/* <PersonForm/>
+<PersonList/> */}
   </div>
 );
 
