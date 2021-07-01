@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Audio() {
 
@@ -149,7 +150,80 @@ function Audio() {
 
     return (
         <div >
-            <form >
+            <Form>
+                <Form.Group controlId="">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type="text" value={name} onChange={(e) => handleName(e)} placeholder="" />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group controlId="">
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control type="text" value={title} onChange={(e) => handleTitle(e)} placeholder="" />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group controlId="">
+                    <Form.Label>Place</Form.Label>
+                    <Form.Control type="text" value={place} onChange={(e) => handlePlace(e)} placeholder="" />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group controlId="">
+                    <Form.Label>Date</Form.Label>
+                    <DatePicker selected={date}  onChange={date => handleDate(date)} />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group controlId="">
+                    <Form.Label>Islami Date</Form.Label>
+                    <DatePicker selected={islamiDate} openToDate={new Date("1442/09/28")} placeholderText="Cick to select a date" onChange={date => handleIslamiDate(date)} />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group controlId="">
+                    <Form.Label>Description</Form.Label>
+                      <Form.Control as="textarea" rows={3} value={description} onChange={(e) => handleDescription(e)} />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group controlId="">
+                    <Form.Label>person</Form.Label>
+                    <Form.Control value={personInput} onChange={(e) => handlePerson(e.target.value, e.target.options.selectedIndex)} as="select">
+                        {
+                            personList.map((item) => {
+                                return (<option > {item.title}</option>)
+                            })
+                        }
+                    </Form.Control>
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group controlId="">
+                    <Form.Label>Type</Form.Label>
+                    <Form.Control value={typeInput} onChange={(e) => handleType(e.target.value, e.target.options.selectedIndex)} as="select">
+                        {
+                            typeList.map((item) => {
+                                return (<option>{item.title}</option>)
+                            })
+                        }
+                    </Form.Control>
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+
+                <Form.Group controlId="">
+                    <Form.Label>Category</Form.Label>
+                    <Form.Control value={categoryInput} onChange={(e) => handleCategory(e.target.value, e.target.options.selectedIndex)} as="select">
+                        {
+                            categoryList.map((item) => {
+                                return (<option>{item.title}</option>)
+                            })
+                        }
+                    </Form.Control>
+                </Form.Group>
+                <Form.Group controlId="">
+                    <Form.File id="exampleFormControlFile1" label="Upload File" type="file" onChange={(e) => handleFile(e)} multiple />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+               
+                <Button variant="primary" onClick={submit}>
+                    Submit
+                </Button>
+                </Form>
+            {/* <form >
                 <label>
                     Name:
           <input type="text" value={name} onChange={(e) => handleName(e)} />
@@ -175,7 +249,7 @@ function Audio() {
                     islamiDate:
                     <DatePicker selected={islamiDate} openToDate={new Date("1442/09/28")} placeholderText="Cick to select a date" onChange={date => handleIslamiDate(date)} />
 
-          {/* <input type="text" name="islamiDate" value={islamiDate} onChange={(e) => handleIslamiDate(e)} /> */}
+          <input type="text" name="islamiDate" value={islamiDate} onChange={(e) => handleIslamiDate(e)} />
                 </label>
 
                 <label>
@@ -218,10 +292,10 @@ function Audio() {
                     </select>
                 </label>
 
-                {/* <input type="submit" value="Submit" /> */}
+                <input type="submit" value="Submit" />
             </form>
             <input type="file" onChange={(e) => handleFile(e)} multiple/>
-            <button onClick={submit}>click</button>
+            <button onClick={submit}>click</button> */}
         </div>
     );
 }
