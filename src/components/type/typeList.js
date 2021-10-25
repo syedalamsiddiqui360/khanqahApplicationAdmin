@@ -26,7 +26,7 @@ function TypeList(props) {
     }, [isUpdate])
 
     const callTypeApi = (e) => {
-        axios.post('http://localhost:9000/type/get_all',{
+        axios.post('http://localhost:9000/type/get_by_limit',{
             offset: offset,
             limit: limit,
         })

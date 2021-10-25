@@ -26,7 +26,7 @@ function CategoryList(props) {
     }, [isUpdate])
 
     const callCategoryApi = (e) => {
-        axios.post('http://localhost:9000/category/get_all',{
+        axios.post('http://localhost:9000/category/get_by_limit',{
             offset: offset,
             limit: limit,
         })

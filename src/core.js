@@ -1,8 +1,8 @@
 import React from "react";
 import FileUpload from "./FileUpload";
 import Download from "./download";
-import Audio from "./components/audio";
-import Pdf from "./components/pdf";
+import Audio from "./components/audio/audio";
+import Pdf from "./components/pdf/pdf";
 import Images from "./components/images";
 import Person from "./components/person/person";
 import PersonForm from "./components/person/personForm";
@@ -23,8 +23,8 @@ const Core = () => (
     {/* <Download/> */}
   </div>
 {/* <Pdf/> */}
-<Images/>
-{/* <Audio/> */}
+{/* <Images/> */}
+<Audio/>
  {/* <Category/> */}
 {/* <CategoryForm/> */}
 {/* <CategoryList/> */}

@@ -30,7 +30,7 @@ function Type() {
     }
 
     return (
-        <div >
+        <div className="p-4">
             <h4 className="text-center">Type</h4>
             
             {tab == 0 && (

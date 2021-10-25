@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 
 function Navbar() {
 
@@ -45,8 +46,27 @@ function Navbar() {
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
+                        <Link class="collapse-item" to={{ pathname: "/core" }} >Audio</Link>
                         <a class="collapse-item" href="buttons.html">Buttons</a>
                         <a class="collapse-item" href="cards.html">Cards</a>
+                    </div>
+                </div>
+            </li>
+
+            {/* <!-- Nav Item - Features Collapse Menu --> */}
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFeatures"
+                    aria-expanded="true" aria-controls="collapseFeatures">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Features</span>
+                </a>
+                <div id="collapseFeatures" class="collapse" aria-labelledby="headingFeatures"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        {/* <h6 class="collapse-header">Custom Features:</h6> */}
+                        <Link class="collapse-item" to={{ pathname: "/type" }} >Type</Link>
+                        <Link class="collapse-item" to={{ pathname: "/person" }}>Person</Link>
+                        <Link class="collapse-item" to={{ pathname: "/category" }}>Category</Link>
                     </div>
                 </div>
             </li>
@@ -62,10 +82,10 @@ function Navbar() {
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <a class="collapse-item" >Colors</a>
+                        <a class="collapse-item" >Borders</a>
+                        <a class="collapse-item" >Animations</a>
+                        <a class="collapse-item" >Other</a>
                     </div>
                 </div>
             </li>

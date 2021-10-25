@@ -6,10 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from "../shared/modal";
 import Pagination from "../shared/pagination";
 
-function PersonList(props) {
+function PdfList(props) {
     const{isUpdate , setIsUpdate , handleData} = props;
     const[id , setId] = useState(0);
-    const [personList, setPersonList] = useState([]);
+    const [pdfList, setPdfList] = useState([]);
 
     //modal states
     const [show, setShow] = useState(false);
@@ -22,11 +22,11 @@ function PersonList(props) {
     const [offset , setOffset] = useState(0);
 
     useEffect(() => {
-        callPersonApi();
+        callAudioApi();
     }, [isUpdate])
 
-    const callPersonApi = (e) => {
-        axios.post('http://localhost:9000/person/get_by_limit',{
+    const callAudioApi = (e) => {
+        axios.post('http://localhost:9000/pdf/get_by_limit',{
             offset: offset,
             limit: limit,
         })
@@ -34,7 +34,7 @@ function PersonList(props) {
             let data = res.data;
             console.log(data);
             setCount(data.count);
-            setPersonList(data.rows);
+            setPdfList(data.rows);
         }).catch((err) => {
             console.log('FAILURE!!' + err);
         });
@@ -46,7 +46,7 @@ function PersonList(props) {
     }
 
     const deleteType = () => {
-        axios.delete('http://localhost:9000/person/delete/'+id)
+        axios.delete('http://localhost:9000/pdf/delete/'+id)
         .then((res) => {
             console.log(res);
             setShow(false);
@@ -57,7 +57,7 @@ function PersonList(props) {
     }
 
     const getOneType = (id) => {
-        axios.post('http://localhost:9000/person/get_by_id/'+id)
+        axios.post('http://localhost:9000/pdf/get_by_id/'+id)
         .then((res) => {
             let data = res.data;
             console.log(data);
@@ -70,12 +70,16 @@ function PersonList(props) {
 
     return (
         <div >
-            <h4>Person List</h4>
+            <h4>Pdf List</h4>
             <Table striped bordered hover>
                 <thead>
                     <tr>
                     <th>Id</th>
+                    <th>name</th>
                     <th>Title</th>
+                    <th>date</th>
+                    <th>place</th>
+                    <th>Islami Date</th>
                     <th>Created At</th>
                     <th>Updated At</th>
                     <th>Action</th>
@@ -83,11 +87,15 @@ function PersonList(props) {
                 </thead>
                 <tbody>
                     {
-                        personList.map((value)=>{
+                        pdfList.map((value)=>{
                            return(
                             <tr key={value.id}>
                             <td onClick={()=>getOneType(value.id)} >{value.id}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.name}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.title}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.date}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.place}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.islamiDate}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.createdAt}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.updatedAt}</td>
                             <td><Button onClick={()=>handleShow(value.id)}>DELETE</Button></td>
@@ -103,4 +111,4 @@ function PersonList(props) {
     );
 }
 
-export default PersonList;
+export default PdfList;
