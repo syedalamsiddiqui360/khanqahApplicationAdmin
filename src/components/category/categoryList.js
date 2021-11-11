@@ -76,6 +76,7 @@ function CategoryList(props) {
                     <tr>
                     <th>Id</th>
                     <th>Title</th>
+                    <th>Type</th>
                     <th>Created At</th>
                     <th>Updated At</th>
                     <th>Action</th>
@@ -88,6 +89,7 @@ function CategoryList(props) {
                             <tr key={value.id}>
                             <td onClick={()=>getOneType(value.id)} >{value.id}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.title}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.typeId ? value.type.title:0}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.createdAt}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.updatedAt}</td>
                             <td><Button onClick={()=>handleShow(value.id)}>DELETE</Button></td>
