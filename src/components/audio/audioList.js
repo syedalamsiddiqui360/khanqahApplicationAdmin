@@ -77,6 +77,8 @@ function AudioList(props) {
                     <th>Id</th>
                     <th>name</th>
                     <th>Title</th>
+                    <th>Person</th>
+                    <th>Category</th>
                     <th>date</th>
                     <th>place</th>
                     <th>Islami Date</th>
@@ -93,6 +95,8 @@ function AudioList(props) {
                             <td onClick={()=>getOneType(value.id)} >{value.id}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.name}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.title}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.personId? value.person.title:""}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.categoryId? value.category.title:""}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.date}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.place}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.islamiDate}</td>
