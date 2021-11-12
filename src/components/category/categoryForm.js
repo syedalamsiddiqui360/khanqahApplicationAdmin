@@ -17,6 +17,7 @@ function CategoryForm(props) {
         getType();
         if(data){
             setTitle(data.title);
+            setType(data.typeId)
             setIsEdit(true);
         }
         else{
