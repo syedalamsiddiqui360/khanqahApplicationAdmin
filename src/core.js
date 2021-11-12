@@ -22,9 +22,9 @@ const Core = () => (
   <div>
     {/* <Download/> */}
   </div>
-{/* <Pdf/> */}
+<Pdf/>
 {/* <Images/> */}
-<Audio/>
+{/* <Audio/> */}
  {/* <Category/> */}
 {/* <CategoryForm/> */}
 {/* <CategoryList/> */}

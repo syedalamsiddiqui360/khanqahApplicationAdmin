@@ -77,9 +77,9 @@ function PdfList(props) {
                     <th>Id</th>
                     <th>name</th>
                     <th>Title</th>
-                    <th>date</th>
-                    <th>place</th>
-                    <th>Islami Date</th>
+                    <th>person</th>
+                    <th>category</th>
+                    {/* <th>Islami Date</th> */}
                     <th>Created At</th>
                     <th>Updated At</th>
                     <th>Action</th>
@@ -93,9 +93,9 @@ function PdfList(props) {
                             <td onClick={()=>getOneType(value.id)} >{value.id}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.name}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.title}</td>
-                            <td onClick={()=>getOneType(value.id)} >{value.date}</td>
-                            <td onClick={()=>getOneType(value.id)} >{value.place}</td>
-                            <td onClick={()=>getOneType(value.id)} >{value.islamiDate}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.personId? value.person.title:""}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.categoryId? value.category.title:""}</td>
+                            {/* <td onClick={()=>getOneType(value.id)} >{value.islamiDate}</td> */}
                             <td onClick={()=>getOneType(value.id)} >{value.createdAt}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.updatedAt}</td>
                             <td><Button onClick={()=>handleShow(value.id)}>DELETE</Button></td>
