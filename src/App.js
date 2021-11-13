@@ -11,6 +11,8 @@ import Category from "./components/category/category";
 import Core from './core';
 import Audio from "./components/audio/audio";
 import Pdf from "./components/pdf/pdf";
+import Slider from "./components/slider/slider";
+import News from "./components/news/news";
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
                   <Route exact={true} path="/category" component={Category} />
                   <Route exact={true} path="/audio" component={Audio} />
                   <Route exact={true} path="/pdf" component={Pdf} />
+                  <Route exact={true} path="/news" component={News} />
+                  <Route exact={true} path="/slider" component={Slider} />
                   <Route exact={true} path="/core" component={Core} />
                 </Switch>
               </div>
