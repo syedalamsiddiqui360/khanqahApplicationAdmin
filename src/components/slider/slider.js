@@ -17,6 +17,7 @@ function Slider() {
     }, [isUpdate])
 
     const handleForm = () => {
+       setData(null);
         setTab(0);
     }
 

@@ -40,18 +40,6 @@ function AudioForm(props) {
             setCategory(data.category_id);
             setIsEdit(true);
         }
-        else{
-            setTitle("");
-            setFileName("");
-            setId("");
-            setName("");
-            setPerson("");
-            setPlace("");
-            setDate(new Date());
-            setIslamiDate(new Date());
-            setDescription("");
-            setCategory("");
-        }
     }, [isUpdate])
 
     useEffect(() => {

@@ -17,7 +17,8 @@ function Audio() {
     }, [isUpdate])
 
     const handleForm = () => {
-        setTab(0);
+       setData(null);
+       setTab(0);
     }
 
     const handleList = () => {

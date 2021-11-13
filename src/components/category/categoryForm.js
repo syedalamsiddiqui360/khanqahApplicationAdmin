@@ -20,9 +20,6 @@ function CategoryForm(props) {
             setType(data.typeId)
             setIsEdit(true);
         }
-        else{
-            setTitle("");
-        }
     }, [isUpdate])
 
     const getType = () => {

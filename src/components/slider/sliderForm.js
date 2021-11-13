@@ -10,13 +10,9 @@ function SliderForm(props) {
     const [isEdit , setIsEdit] = useState(false);
 
     useEffect(() => {
-        console.log(data)
         if(data){
             setTitle(data.title);
             setIsEdit(true);
-        }
-        else{
-            setTitle("");
         }
     }, [isUpdate])
 

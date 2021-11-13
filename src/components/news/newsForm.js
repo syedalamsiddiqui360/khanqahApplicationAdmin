@@ -19,11 +19,6 @@ function NewsForm(props) {
             setDescription(data.description);
             setIsEdit(true);
         }
-        else{
-            setTitle("");
-            setDescription("");
-            setExpire(false);
-        }
     }, [isUpdate])
 
     const submit = () => {

@@ -15,9 +15,6 @@ function PersonForm(props) {
             setTitle(data.title);
             setIsEdit(true);
         }
-        else{
-            setTitle("");
-        }
     }, [isUpdate])
 
     const submit = () => {
