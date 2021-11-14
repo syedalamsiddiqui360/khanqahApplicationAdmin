@@ -85,7 +85,7 @@ function Navbar() {
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Utilities:</h6>
                         <Link class="collapse-item" to={{ pathname: "/news" }} >News</Link>
-                        <Link class="collapse-item" to={{ pathname: "/type" }} >Images</Link>
+                        <Link class="collapse-item" to={{ pathname: "/image" }} >Image</Link>
                         <a class="collapse-item" >Colors</a>
                         <a class="collapse-item" >Borders</a>
                         <a class="collapse-item" >Animations</a>

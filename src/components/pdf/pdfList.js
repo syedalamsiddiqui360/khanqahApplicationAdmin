@@ -93,7 +93,7 @@ function PdfList(props) {
                             <td onClick={()=>getOneType(value.id)} >{value.id}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.name}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.title}</td>
-                            <td onClick={()=>getOneType(value.id)} >{value.personId? value.person.title:""}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.person? value.person.title:""}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.categoryId? value.category.title:""}</td>
                             {/* <td onClick={()=>getOneType(value.id)} >{value.islamiDate}</td> */}
                             <td onClick={()=>getOneType(value.id)} >{value.createdAt}</td>

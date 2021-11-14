@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PersonForm from "./personForm";
-import PersonList from "./personList";
+import ImageForm from "./imageForm";
+import ImageList from "./imageList";
 
-function Person() {
+function Image() {
     const [tab , setTab] = useState(1);
     const [isUpdate , setIsUpdate] = useState(false);
     const [data , setData] = useState(null);
@@ -32,22 +32,22 @@ function Person() {
 
     return (
         <div className="p-4" >
-            <h4 className="text-center">Person</h4>
+            <h4 className="text-center">Image</h4>
             
             {tab == 0 && (
                 <>
                 <Button variant="primary" onClick={handleList}>List</Button>
-                <PersonForm setIsUpdate={setIsUpdate} isUpdate={isUpdate} data={data}/>
+                <ImageForm setIsUpdate={setIsUpdate} isUpdate={isUpdate} data={data}/>
                 </>
                 )}
             {tab == 1 && (
                 <>
                 <Button variant="primary" onClick={handleForm}>Create</Button>
-                <PersonList handleData={handleData} setIsUpdate={setIsUpdate} isUpdate={isUpdate}/>
+                <ImageList handleData={handleData} setIsUpdate={setIsUpdate} isUpdate={isUpdate}/>
                 </>
             )}
         </div>
     );
 }
 
-export default Person;
+export default Image;

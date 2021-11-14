@@ -13,6 +13,7 @@ import Audio from "./components/audio/audio";
 import Pdf from "./components/pdf/pdf";
 import Slider from "./components/slider/slider";
 import News from "./components/news/news";
+import Image from "./components/image/image";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
                   <Route exact={true} path="/pdf" component={Pdf} />
                   <Route exact={true} path="/news" component={News} />
                   <Route exact={true} path="/slider" component={Slider} />
+                  <Route exact={true} path="/image" component={Image} />
                   <Route exact={true} path="/core" component={Core} />
                 </Switch>
               </div>
