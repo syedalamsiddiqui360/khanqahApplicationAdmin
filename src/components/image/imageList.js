@@ -89,7 +89,7 @@ function ImageList(props) {
                             <tr key={value.id}>
                             <td onClick={()=>getOneType(value.id)} >{value.id}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.title}</td>
-                            <td onClick={()=>getOneType(value.id)} >{value.sliderId}</td>
+                            <td onClick={()=>getOneType(value.id)} >{value.slider? value.slider.title:""}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.createdAt}</td>
                             <td onClick={()=>getOneType(value.id)} >{value.updatedAt}</td>
                             <td><Button onClick={()=>handleShow(value.id)}>DELETE</Button></td>
